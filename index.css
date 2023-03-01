@@ -109,7 +109,7 @@ body {
 
 .sns-container {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .sns-item {
@@ -120,7 +120,7 @@ body {
 
 .ad {
     width: 970px;
-    margin: 50px 0 0 20px;
+    margin: 0 auto;
 }
 
 ins.adsbygoogle[data-ad-status="unfilled"] {
