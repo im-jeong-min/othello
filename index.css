@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    background-color: #EEE;
+}
+
+#title {
+    margin: 0 0 50px 20px;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-weight: 800;
+    font-size: 80px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#gameBoard > table {
+    margin: 0 auto;
+    border-spacing: 1px;
+}
+
+#gameBoard > table th {
+    margin: 0;
+    padding: 0.125em 0.25em;
+    line-height: 100%;
+}
+
+.cell {
+    background-color: green;
+    height: 35px;
+    width: 35px;
+}
+
+.disc {
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 33px;
+    width: 33px;
+}
+
+.blocked {
+    background-color: grey !important; 
+}
+
+.black > .disc {
+    background-color: black;
+    background-image: radial-gradient(#333333 30%, black 70%);
+}
+
+.attackableBlack:hover {
+    background-color: #F9F54B;
+    cursor: pointer;
+}
+
+.attackableBlack:hover > .disc {
+    background-color: black;
+    background-image: radial-gradient(#333333 30%, black 70%);
+    border-radius: 50%;
+    height: 33px;
+    width: 33px;
+}
+
+.attackableBlack > .disc {
+    background-color: black;
+    border-radius: 0;
+    height: 5px;
+    width: 5px;
+}
+
+.white > .disc {
+    background-color: white;
+    background-image: radial-gradient(white 30%, #cccccc 70%);
+}
+
+.attackableWhite:hover {
+    background-color: #F9F54B;
+    cursor: pointer;
+}
+
+.attackableWhite:hover > .disc {
+    background-color: white;
+    background-image: radial-gradient(white 30%, #cccccc 70%);
+    border-radius: 50%;
+    height: 33px;
+    width: 33px;
+}
+
+.attackableWhite > .disc {
+    background-color: white;
+    border-radius: 0;
+    height: 5px;
+    width: 5px;
+}
+
+#score, #turn {
+    text-align: center;
+    font-weight: 800;
+    margin: 10px 0 0 20px;
+}
+
+#new-game-button-container {
+    text-align: center;
+    margin: 10px 0 0 20px;
+}
+
+#new-game-button {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.sns-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sns-item {
+    font-size: 30px;
+    color: black;
+    margin-left: 20px;
+}
+
+.ad {
+    width: 970px;
+    margin: 50px 0 0 20px;
+}
+
+ins.adsbygoogle[data-ad-status="unfilled"] {
+    display: none !important;
+}
