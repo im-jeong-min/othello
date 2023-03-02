@@ -129,6 +129,9 @@ function clickedSquare(row,column) {
             else if (ones < twos) {
                 turnLabel.innerHTML = "White win!"
             }
+            else if (ones == twos) {
+                turnLabel.innerHTML = "Draw!"
+            }
         }
         else {
             drawDiscs()
