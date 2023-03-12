@@ -29,5 +29,4 @@ Web-based game [Othello/Reversi](https://en.wikipedia.org/wiki/Reversi) implemen
 
 * [https://www.youtube.com/watch?v=-ATbKu_0VVs&list=PLA7VQFdAJ2vfytZFoskFIBYLlNuCUGi0N](https://www.youtube.com/watch?v=-ATbKu_0VVs&list=PLA7VQFdAJ2vfytZFoskFIBYLlNuCUGi0N)
 * [https://kana.github.io/othello-js/](https://kana.github.io/othello-js/)
-* ![MapleStory Battle Reverse](https://user-images.githubusercontent.com/64826387/222426148-b30a3b1a-b0fb-4902-ba34-af97d8f5e709.png)
-_[MapleStory Battle Reverse](https://maplestory.nexon.com/News/Event/400)_
+* [https://maplestory.nexon.com/News/Event/400](https://maplestory.nexon.com/News/Event/400)
