@@ -1,6 +1,6 @@
-# Othello ([link](https://duckbankbok.github.io/othello/))
+# Othello
 
-Web-based game [Othello/Reversi](https://en.wikipedia.org/wiki/Reversi) implemented by HTML, CSS, Vanilla JavaScript
+Web-based game [Othello/Reversi](https://duckbankbok.github.io/othello/) implemented by HTML, CSS, Vanilla JavaScript
 
 <br>
 <div align="center">
@@ -21,7 +21,8 @@ Web-based game [Othello/Reversi](https://en.wikipedia.org/wiki/Reversi) implemen
 
 ## Development Progress
 
-* v1 (Present): Both black and white are controlled by the player.
+* v1 : Both black and white are controlled by the player.
+* v1.1 (Present): Add draw at start.
 
   * Goal for next version: Implementing 'player vs. AI' function
 

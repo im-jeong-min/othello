@@ -13,10 +13,44 @@ function getStarted() {
     gameOver = false
     setDiscs()
     setBlockedRegion()
+    if (canMove(1) == false && canMove(2)) {
+        alert("Black cannot move. Turn goes to White!")
+        turn = 2
+    }
     drawDiscs()
     drawCanMoveLayer()
     redrawScore()
     redrawTurn()
+
+    if (canMove(1) == false && canMove(2) == false) {
+        alert("Game over!")
+        gameOver = true
+    }
+
+    if (gameOver) {
+        drawDiscs()
+        redrawScore()
+        
+        var ones = 0
+        var twos = 0
+        for (var row = 0; row < 8; row++) {
+            for (var column = 0; column < 8; column++) {
+                var value = discs[row][column]
+                if (value == 1) ones += 1
+                else if (value == 2) twos += 1
+            }
+        }
+        
+        if (ones > twos) {
+            turnLabel.innerHTML = "Black win!"
+        }
+        else if (ones < twos) {
+            turnLabel.innerHTML = "White win!"
+        }
+        else if (ones == twos) {
+            turnLabel.innerHTML = "Draw!"
+        }
+    }
 }
 
 function range(start, end) {
