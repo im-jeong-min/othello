@@ -22,7 +22,7 @@ Web-based game [Othello/Reversi](https://en.wikipedia.org/wiki/Reversi) implemen
 ## Development Progress
 
 * v1 : Both black and white are controlled by the player.
-* v1.1 (Present): Add draw at start.
+* v1.1 (Present): Add skip turn at start.
 
   * Goal for next version: Implementing 'player vs. AI' function
 
