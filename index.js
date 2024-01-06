@@ -1,14 +1,28 @@
 var discs = []
 var turn = 1
-var scoreLabel = document.getElementById("score")
+var ai = 0
+var scoreBlackLabel = document.getElementById("scoreBlack")
+var scoreWhiteLabel = document.getElementById("scoreWhite")
 var turnLabel = document.getElementById("turn")
 var gameOver = false
+let timer
 
 window.onload=function() {
     getStarted()
 }
 
+function checkAI() {
+    var aiLabel = document.getElementById("ai-type").value
+    if (aiLabel == "none") {
+        stopTimer()
+        getStarted()
+    }
+    else if (aiLabel == "black") getStartedAIBlack()
+    else if (aiLabel == "white") getStartedAIWhite()
+}
+
 function getStarted() {
+    ai = 0
     turn = 1
     gameOver = false
     setDiscs()
@@ -51,6 +65,59 @@ function getStarted() {
             turnLabel.innerHTML = "Draw!"
         }
     }
+}
+
+function getStartedAIBlack() {
+    stopTimer()
+    getStarted()
+    ai = 1
+    setTimeout(function () {
+        playAIBlack()
+    }, 1000)
+}
+
+function getStartedAIWhite() {
+    stopTimer()
+    getStarted()
+    ai = 2
+}
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+function playAIBlack() {
+    var id = 1
+    var idx_list = []
+    for (var row = 0; row < 8; row++) {
+        for (var column = 0; column < 8; column++) {
+            if (canClickSpot(id,row,column)) {
+                idx_list.push([row,column])
+            }
+        }
+    }
+    var idx = Math.floor(Math.random() * idx_list.length)
+    var number = idx_list.splice(idx, 1)
+    var row = number[0][0]
+    var column = number[0][1]
+    clickedSquare(row,column)
+}
+
+function playAIWhite() {
+    var id = 2
+    var idx_list = []
+    for (var row = 0; row < 8; row++) {
+        for (var column = 0; column < 8; column++) {
+            if (canClickSpot(id,row,column)) {
+                idx_list.push([row,column])
+            }
+        }
+    }
+    var idx = Math.floor(Math.random() * idx_list.length)
+    var number = idx_list.splice(idx, 1)
+    var row = number[0][0]
+    var column = number[0][1]
+    clickedSquare(row,column)
 }
 
 function range(start, end) {
@@ -172,7 +239,22 @@ function clickedSquare(row,column) {
             drawCanMoveLayer()
             redrawScore()
             redrawTurn()
+            moveAI()
         }
+    }
+}
+
+function moveAI() {
+    if (ai == 1 && turn == 1) {
+        setTimeout(function () {
+            playAIBlack()
+        }, 1000)
+    }
+    
+    if (ai == 2 && turn == 2) {
+        setTimeout(function () {
+            playAIWhite()
+        }, 1000)
     }
 }
 
@@ -215,7 +297,11 @@ function redrawScore() {
             else if (value == 2) twos += 1
         }
     }
-    scoreLabel.innerHTML = "Black: " + ones + " White: " + twos
+    if (ones < 10) scoreBlackLabel.innerHTML = "0" + String(ones)
+    else scoreBlackLabel.innerHTML = ones
+
+    if (twos < 10) scoreWhiteLabel.innerHTML = "0" + String(twos)
+    else scoreWhiteLabel.innerHTML = twos
 }
 
 function redrawTurn() {

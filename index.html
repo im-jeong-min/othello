@@ -27,7 +27,7 @@
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b9ed9adef2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
     <title>Othello</title>
@@ -268,10 +268,32 @@
         </table>
     </div>
 
-    <div id="score">Black: 2 White: 2</div>
     <div id="turn">Turn: Black</div>
+    <div id="ai">
+        AI: <select id="ai-type">
+            <option value="none" selected>-</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+        </select>
+    </div>
+    
     <div id="new-game-button-container">
-        <button id="new-game-button" onclick="getStarted()">Start a new game</button>
+        <button id="new-game-button" onclick="checkAI()">Start a new game</button>
+    </div>
+
+    <div class="score-board-container">
+        <div class="row">
+            <div class="col col-heading">
+            <h1>Black</h1>
+            </div>
+            <div class="col col-display" id="scoreBlack">02</div>
+        </div>
+        <div class="row">
+            <div class="col col-heading">
+            <h1>White</h1>
+            </div>
+            <div class="col col-display" id="scoreWhite">02</div>
+        </div>
     </div>
 
     <div class="sns-container">
