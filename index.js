@@ -185,11 +185,20 @@ function drawDiscs() {
     }
 }
 
-function clickedSquare(row,column) {
+function clickedSquare(row,column,AI=true) {
     if (gameOver) return
 
     if (discs[row][column] != 0) {
         return
+    }
+
+    if (AI==false) {
+        if (ai==1 && turn==1) {
+            return
+        }
+        else if (ai==2 && turn==2) {
+            return
+        }
     }
 
     if (canClickSpot(turn,row,column) == true) {

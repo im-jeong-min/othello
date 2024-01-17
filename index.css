@@ -96,7 +96,7 @@ body {
 }
 
 .score-board-container {
-    width: 600px;
+    width: 400px;
     height: 200px;
     background: black;
     border-radius: 5px;
@@ -108,14 +108,14 @@ body {
     margin-top: 10px;
 }
 
-.row {
+.team {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.col-heading h1 {
+.team-name h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
@@ -124,7 +124,7 @@ body {
     color: white;
 }
 
-.col-display {
+.score-board {
     width: 120px;
     height: 100px;
     background: #080001;
@@ -138,12 +138,6 @@ body {
     line-height: 110px;
     text-align: center;
     color: red;
-}
-
-.col-points {
-    margin-top: 25px;
-    display: flex;
-    gap: 10px;
 }
 
 #turn, #ai {
