@@ -119,13 +119,13 @@ body {
 #score-board-container {
     width: 100%;
     min-height: 200px;
-    max-width: 600px;
+    max-width: 400px;
     background: black;
     border-radius: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     color: white;
-    padding: 20px 20px 50px 20px;
+    padding-bottom: 30px; 
     margin: 0 auto;
     margin-top: 10px;
 }
@@ -139,25 +139,24 @@ body {
 
 .team-name h1 {
     font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 36px;
+    font-weight: 800;
+    font-size: 30px;
     text-align: center;
     color: white;
 }
 
 .score-board {
-    width: 120px;
-    height: 100px;
+    width: 80px;
+    height: 60px;
     background: #080001;
     border-radius: 5px;
     border: 3px solid white;
     padding: 0 0 0 5px;
     font-family: 'Press Start 2P', system-ui;
     font-style: normal;
-    font-weight: 200;
-    font-size: 50px;
-    line-height: 110px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 70px;
     text-align: center;
     color: red;
 }
