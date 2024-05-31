@@ -35,7 +35,7 @@
 <body>
     <h1 id="title"><a href="https://duckbankbok.github.io/othello/" id="title-link"><span style="color:black;">O</span><span style="color:white;">t</span><span style="color:black;">h</span><span style="color:white;">e</span><span style="color:black;">l</span><span style="color:white;">l</span><span style="color:grey;">o</span></a></h1>
     <div id="banner-container">
-        <div id="ad-container">
+        <div id="ad-container" onclick="handleAdClick(event)">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7693574899621117"
                 crossorigin="anonymous"></script>
             <!-- Othello -->
@@ -317,5 +317,31 @@
     </div>
 
     <script src="index.js"></script>
+    <script>
+        // 광고 클릭을 처리하는 함수
+        function handleAdClick(event) {
+            const maxClicks = 2; // 사용자가 허용된 최대 클릭 횟수
+            const clickInterval = 24 * 60 * 60 * 1000; // 클릭 기록을 유지할 시간 (24시간)
+
+            // 현재 시간
+            const now = new Date().getTime();
+
+            // 로컬 스토리지에서 클릭 기록을 가져옴
+            let adClicks = JSON.parse(localStorage.getItem('adClicks')) || [];
+
+            // 유효하지 않은 기록 제거
+            adClicks = adClicks.filter(clickTime => now - clickTime < clickInterval);
+
+            if (adClicks.length >= maxClicks) {
+            alert('Invalid traffic detected.');
+            event.preventDefault();
+            return false;
+            } else {
+            // 현재 클릭 시간 추가
+            adClicks.push(now);
+            localStorage.setItem('adClicks', JSON.stringify(adClicks));
+            }
+        }
+    </script>
 </body>
 </html>
